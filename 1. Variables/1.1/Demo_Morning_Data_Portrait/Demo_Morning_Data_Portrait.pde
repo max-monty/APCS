@@ -8,7 +8,7 @@ void setup() {
 
   // Personal data as variables
   int hourIWoke = 6;       // whole number (int)
-  float hoursSlept = 7.5;  // decimal (float)
+  float hoursSlept = 10.5;  // decimal (float)
   int coffeeCups = 2;      // whole number (int)
   boolean isTired = true;  // teaser for next units
 
@@ -25,7 +25,7 @@ void setup() {
 
   // Coffee → circle size
   fill(110, 70, 40);
-  circle(220, height/4*3, coffeeCups * 48);
+  circle(width/2, height/4*3, coffeeCups * 48);
 
   // Boolean teaser
   if (isTired) {
