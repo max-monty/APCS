@@ -2,39 +2,48 @@
 // Goal: Show how personal numbers become visuals
 
 void setup() {
-  size(500, 500);
-  background(24);
-  noStroke();
-
-  // Personal data as variables
-  int hourIWoke = 6;       // whole number (int)
-  float hoursSlept = 10.5;  // decimal (float)
-  int coffeeCups = 2;      // whole number (int)
-  boolean isTired = true;  // teaser for next units
-
-  // Visual mappings
   
-  // Sleep → moon/sun size
-  fill(255, 240, 200, 100);
-  float sunSize = hoursSlept * 28;
-  circle(120, height/3, sunSize);
-
-  // Wake time → sun position (coarse)
-  fill(255, 180, 80, 120);
-  ellipse(hourIWoke * 45, height/3, 110, 110);
-
-  // Coffee → circle size
-  fill(110, 70, 40);
-  circle(width/2, height/4*3, coffeeCups * 48);
-
-  // Boolean teaser
+  size(500,500);
+  
+  noStroke();
+  
+  
+  // Declare and initialize personal variables
+  int hourIWoke = 6;
+  float hoursSlept = 7.5;
+  int coffeeCups = 2;
+  boolean isTired = true;
+  
+  /*
+  Visual mapping of my sleepiness
+  */
+  
+  // Background based on isTired
   if (isTired) {
-    fill(100, 120, 255);
-    rect(420, 60, 50, 50);
+    background(220);
+  } else{
+    background(125, 209, 188);
   }
+  
+  // Sun brightness based on hoursSlept
+  float sunBrightness = map(hoursSlept, 0, 8, 0, 255);
+  fill(255, 251, 0, sunBrightness); 
+  circle(100, height/5, 75);
+  
+   // Awake hours in the day bar based on hourIWoke
+  fill(0, 255, 0);
+  float hoursAwake = 22.0 - hourIWoke;
+  rect(width - 50, 10, 20, hoursAwake * 20);
+
+  // Number of squares based on coffee cups
+  fill(110, 70, 40);
+  for (int i =0; i < coffeeCups; i++){
+    square(i*100 + 50, height - 30, 25);
+  }
+  
 
   // Console checks
-  println("Woke at: " + hourIWoke + "h");
+  println("Woke at: " + hourIWoke + "am");
   println("Slept: " + hoursSlept + " hours");
   println("Coffee cups: " + coffeeCups);
   println("Tired? " + isTired);
