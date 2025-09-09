@@ -6,8 +6,8 @@ void setup() {
 
   // Inputs
   int hourIWoke = 7;
-  float hoursSlept = 7.5;
-  int coffeeCups = 10;
+  float hoursSlept = 15.5;
+  int coffeeCups = 1;
 
   // Rest score in [0,1] (simple model)
   float restScore = hoursSlept / 8.0;            // 8h ideal
