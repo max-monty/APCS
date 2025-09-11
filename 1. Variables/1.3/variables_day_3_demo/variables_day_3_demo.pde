@@ -6,7 +6,7 @@ void setup() {
   textSize(16);
 
   // Casting & truncation
-  int a = (int) 7.9;       // 7
+  int a =  (int)7.9;       // 7
   float b = (float) (7/2); // 3.0  (int division first)
   float c = 7 / 2.0;       // 3.5  (float operand)
   float d = (float)7 / 2;  // 3.5  (cast before division)
